@@ -92,16 +92,17 @@ echo "Hola, $nom!"
 
 ## Condicionals
 
- ´´´bash
+```bash
 if [ $variable2 -gt 100 ]; then
     echo "El valor és major que 100"
 else
     echo "El valor és menor o igual que 100"
 fi
-´´´
-En bash el `if` s'escriu amb el format `if [ condició ]; then`, on la condició pot ser qualsevol expressió que retorni un valor booleà. El `then` indica l'inici del bloc d'instruccions a executar si la condició és certa. El `else` és opcional i s'utilitza per definir el bloc d'instruccions a executar si la condició és falsa.
+```
 
-També es poden usar dobles claudàtors `[[ ]]` per fer comparacions més complexes, com ara:
+En bash el `if` s'escriu amb el format `if [ condició ]; then`, on la condició pot ser qualsevol expressió que retorni un valor booleà. El `then` indica l'inici del bloc d'instruccions a executar si la condició és certa. El `else` és opcional i s'utilitza per definir el bloc d'instruccions a executar si la condició és falsa. Per finalitzar el bloc d'instruccions, s'utilitza `fi`.
+
+En el cas de bash, zsh i altres shells moderns es recomana `[[ ]]` per fer comparacions més complexes, ja que permet usar expresions amb `&&`o `||`, expressions regulars i `pattern matching`. A continuació teniu un exemple:
 
 ```bash
 if [[ $variable1 == "valor" && $variable2 -gt 100 ]]; then
@@ -118,7 +119,17 @@ if [ "$(id -u)" -ne 0 ]; then
 fi
 ```
 
-El `exit 1` indica que l'script ha fallat.
+El `exit 1` força que l'script acabi i amb codi de sortida erroni.
+
+Els condicionals també poden usar doble parèntesi `(( ))` per fer comparacions numèriques de forma similar a com fer-ho en llenguatges de programació com C o Java:
+
+```bash
+if (( variable2 > 100 )); then
+    echo "El valor és major que 100"
+else
+    echo "El valor és menor o igual que 100"
+fi
+```
 
 ## Bucles
 
@@ -141,7 +152,7 @@ for element in "${array[@]}"; do
 done
 ```
 
-Per bucles sobre nombres s'usa el doble parèntesi:
+Per bucles sobre nombres s'usa el doble parèntesi per permetre usar el format típic de C:
 
 ```bash
 for (( i=0; i<5; i++ )); do
@@ -302,6 +313,22 @@ A la carpeta `exemples` trobaràs exemples d'scripts senzills que et poden ser �
 - [password.sh](exemples/password.sh) - Script per canviar la contrasenya a tots els usuari
 - [create_user.sh](exemples/create_user.sh) - Script per crear un usuari amb nom i password passats com arguments
 - [create_users.sh](exemples/create_users.sh) - Script per crear diversos usuaris amb un nom base i un número de seqüència
+
+## Execució d'scripts
+
+Per executar un script, primer cal donar-li permisos d'execució. Això es fa amb la comanda `chmod`:
+
+```bash
+chmod +x nom_script.sh
+```
+
+Després, pots executar l'script amb:
+
+```bash
+./nom_script.sh
+```
+
+El script també es pot executar amb `bash nom_script.sh`en aquest cas, no cal donar permisos d'execució.
 
 ## Bones pràctiques
 

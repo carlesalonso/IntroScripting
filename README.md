@@ -1,8 +1,10 @@
 # Guia per a la creació de scripts
 
+![banner](img/banner.png)
+
 ## Introducció
 
-Aquest document explica com crear scripts per gestionar sistemes Linux. Els scripts són una eina poderosa per automatitzar tasques repetitives i millorar l'eficiència en la gestió de sistemes.
+Aquest repositori explica com crear scripts per gestionar sistemes Linux. Els scripts són una eina poderosa per automatitzar tasques repetitives i millorar l'eficiència en la gestió de sistemes.
 Els scripts es poden escriure en diversos llenguatges, però aquí ens centrarem en `bash`, que és el shell per defecte en moltes distribucions de Linux.
 
 ## Estructura bàsica d'un script

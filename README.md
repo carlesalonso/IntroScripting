@@ -141,6 +141,14 @@ for element in "${array[@]}"; do
 done
 ```
 
+Per bucles sobre nombres s'usa el doble parèntesi:
+
+```bash
+for (( i=0; i<5; i++ )); do
+    echo "Iteració $i"
+done
+```
+
 ### Exemple Bucle `while`
 
 ```bash
@@ -256,7 +264,7 @@ comanda &>/dev/null
 
 D'aquesta manera, no veuràs cap sortida ni error a la pantalla, de manera que a la pantalla únicament es mostrarà la sortida que gestioni l'script.
 
-## Exemples comuns
+## Exemples senzills
 
 ### 1. Comprovar si un usuari existeix
 
@@ -286,6 +294,14 @@ if [ $# -ne 2 ]; then
     exit 1
 fi
 ```
+
+A la carpeta `exemples` trobaràs exemples d'scripts senzills que et poden ser útils:
+
+- [countdown.sh](exemples/countdown.sh) - Script per fer un compte enrere passant el temps com argument
+- [floyd.sh](exemples/floyd.sh) - Script per dibuixar un triangle de Floyd
+- [password.sh](exemples/password.sh) - Script per canviar la contrasenya a tots els usuari
+- [create_user.sh](exemples/create_user.sh) - Script per crear un usuari amb nom i password passats com arguments
+- [create_users.sh](exemples/create_users.sh) - Script per crear diversos usuaris amb un nom base i un número de seqüència
 
 ## Bones pràctiques
 

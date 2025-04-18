@@ -290,7 +290,18 @@ D'aquesta manera, no veuràs cap sortida ni error a la pantalla, de manera que a
 ### 1. Comprovar si un usuari existeix
 
 ```bash
-if id "usuari" &>/dev/null; then
+if  id "usuari" &>/dev/null ; then
+    echo "L'usuari existeix"
+else
+    echo "L'usuari no existeix"
+fi
+```
+
+o alternativament:
+
+```bash
+id "usuari" &>/dev/null     
+if [[ $? -eq 0 ]]; then
     echo "L'usuari existeix"
 else
     echo "L'usuari no existeix"
@@ -301,7 +312,7 @@ fi
 
 ```bash
 DIRECTORI="/ruta/al/directori"
-if [ ! -d "$DIRECTORI" ]; then
+if [[ ! -d "$DIRECTORI" ]]; then
     mkdir -p "$DIRECTORI"
     echo "Directori creat correctament"
 fi
@@ -310,7 +321,7 @@ fi
 ### 3. Comprovar si el número d'arguments és correcte
 
 ```bash
-if [ $# -ne 2 ]; then
+if [[ $# -ne 2 ]]; then
     echo "Ús: $0 argument1 argument2"
     exit 1
 fi

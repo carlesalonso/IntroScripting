@@ -354,3 +354,11 @@ El script també es pot executar amb `bash nom_script.sh`en aquest cas, no cal d
 - `man bash` per documentació completa
 - [Shellcheck](https://www.shellcheck.net) eina online per validar scripts
 - [Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html)
+
+## Llicència d'ús
+
+Aquest repositori i tot el seu contingut estan llicenciats sota una llicència Creative Commons, si vols saber-ne més, consulta les condicions [Creative Commons](https://creativecommons.org/licenses/by-nc-sa/4.0/). Si us plau, si comparteixes, utilitzes o modifiques aquest projecte, cita l’autor i utilitza les mateixes condicions per al seu ús docent, formatiu o educatiu i no comercial.
+
+La imatge del banner ha estat generada amb chatGPT (https://openai.com/chatgpt).
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">

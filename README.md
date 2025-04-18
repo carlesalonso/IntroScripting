@@ -286,6 +286,20 @@ comanda &>/dev/null
 
 D'aquesta manera, no veuràs cap sortida ni error a la pantalla, de manera que a la pantalla únicament es mostrarà la sortida que gestioni l'script.
 
+## Pipelines
+
+Els pipelines permeten encadenar comandes. La sortida d'una comanda es converteix en l'entrada de la següent. Per fer-ho, utilitzem el símbol `|`:
+
+```bash
+comanda1 | comanda2 | comanda3
+```
+
+És útil perquè permet automatitzar comandes que per defecte esperen interacció de l'usuari. Per exemple, la comanda `chpasswd` per canviar la contrasenya d'un usuari, que normalment demana interacció de l'usuari, es pot fer servir així:
+
+```bash
+echo "usuari:contrasenya" | chpasswd
+```
+
 ## Exemples senzills
 
 ### 1. Comprovar si un usuari existeix

@@ -52,6 +52,12 @@ else
     echo "El tercer caràcter no és una c o una d"
 fi
 
+## Això també ho podeu fer servir per crear objectes múltiples
+## Crea tres fitxers buits amb el format fitxer1.txt, fitxer2.txt i fitxer3.txt
+
+touch fitxer{1..3}.txt
+
+
 ## Comprova si la cadena té el valor de something o anything
 ## El símbol + indica que el patró anterior pot aparèixer una o més vegades
 ## El símbol * indica que el patró anterior pot aparèixer zero o més vegades

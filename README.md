@@ -222,10 +222,11 @@ function suma() {
     echo "$resultat" # Retorna el resultat
 }
 resultat=$(suma 5 10) # Captura el valor retornat
+```
 
 ## Codis de retorn
 
-Els scripts poden retornar codis d'error. El codi 0 indica que tot ha anat bé, mentre que qualsevol altre codi indica un error. Per establir el codi de retorn, utilitza `exit`:
+Els scripts poden retornar codis d'error. El codi 0 indica que tot ha anat bé, mentre que qualsevol altre codi indica un error. Per establir el codi de retorn de l'script s'utilitza `exit` que acabat l'execució de l'script i retorna un codi d'error. Per exemple:
 
 ```bash
 exit 0 # Tot ha anat bé

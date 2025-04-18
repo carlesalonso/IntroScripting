@@ -51,7 +51,7 @@ echo "Colors disponibles: ${colors[@]}"
 
 ## Escrivint a la consola
 
-Per escriure a la consola, utilitzem `echo` o `printf`. `echo` és més senzill, però `printf` ofereix més opcions de formatació.
+Per escriure a la consola, utilitzem `echo` o `printf`. `echo` és més senzill i ja força el salt de línia, però `printf` ofereix més opcions de formatació.
 
 ```bash
 echo "Hola, món!"
@@ -65,10 +65,10 @@ printf "El valor de variable1 és: %s\n" "$variable1"
 printf "El valor de variable2 és: %d\n" "$variable2"
 ```
 
-En el cas d'echo, si volem mostrar una variable amb un salt de línia, podem fer-ho així:
+En el cas d'echo, amb l'opció `-e` podem habilitar el processament d'escapament de caràcters, com `\n` per salt de línia, `\t` per tabulació o per incloure les cometes amb \".
 
 ```bash
-echo -e "El valor de variable1 és: $variable1\nEl valor de variable2 és: $variable2"
+echo -e "Una cita amb cometes: \"Hola, món!\""
 ```
 
 ## Passant dades a l'script
@@ -102,9 +102,17 @@ else
 fi
 ```
 
-En bash el `if` s'escriu amb el format `if [ condició ]; then`, on la condició pot ser qualsevol expressió que retorni un valor booleà. El `then` indica l'inici del bloc d'instruccions a executar si la condició és certa. El `else` és opcional i s'utilitza per definir el bloc d'instruccions a executar si la condició és falsa. Per finalitzar el bloc d'instruccions, s'utilitza `fi`.
+En els shells clàssics com `sh`, el `if` s'escriu amb el format `if [ condició ]; then`, on la condició pot ser qualsevol expressió que retorni un valor booleà. El `then` indica l'inici del bloc d'instruccions a executar si la condició és certa. El `else` és opcional i s'utilitza per definir el bloc d'instruccions a executar si la condició és falsa. Per finalitzar el bloc d'instruccions, s'utilitza `fi`.
 
-En el cas de bash, zsh i altres shells moderns es recomana `[[ ]]` per fer comparacions més complexes, ja que permet usar expresions amb `&&`o `||`, expressions regulars i `pattern matching`. A continuació teniu un exemple:
+Els operadors de comparació més comuns són:
+
+- `-eq`: igual a
+- `-ne`: diferent de
+- `-gt`: major que
+- `-lt`: menor que
+- `-ge`: major o igual que
+
+En el cas de bash, zsh i altres shells moderns es recomana `[[ ]]`, ja que permet encadenar condicions amb `&&`o `||`, ja es poden fer comparacions de cadenes de text amb `>`, `<`, `==` i `!=`, usar expressions regulars i `pattern matching` (teniu un script d'exemple de cada cas). A continuació teniu un exemple:
 
 ```bash
 if [[ $variable1 == "valor" && $variable2 -gt 100 ]]; then
@@ -115,15 +123,15 @@ fi
 Un condicional molt típic és comprovar si s'està executant com a root:
 
 ```bash
-if [ "$(id -u)" -ne 0 ]; then
+if [[ "$(id -u)" -ne 0 ]]; then
     echo "Aquest script ha de ser executat com a root"
     exit 1
 fi
 ```
 
-El `exit 1` força que l'script acabi i amb codi de sortida erroni.
+El `exit 1` força la finalització de l'script amb un codi d'error. Això és útil per evitar que l'script continuï executant-se si no es compleixen les condicions necessàries.
 
-Els condicionals també poden usar doble parèntesi `(( ))` per fer comparacions numèriques de forma similar a com fer-ho en llenguatges de programació com C o Java:
+Els condicionals en bash també poden usar doble parèntesi `(( ))` per fer comparacions numèriques, de forma similar a com es fa en llenguatges de programació com C o Java:
 
 ```bash
 if (( variable2 > 100 )); then

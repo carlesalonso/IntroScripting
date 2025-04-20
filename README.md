@@ -403,4 +403,4 @@ Aquest repositori i tot el seu contingut estan llicenciats sota una llicència C
 
 La imatge del banner ha estat generada amb chatGPT (https://openai.com/chatgpt).
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/128x62.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">

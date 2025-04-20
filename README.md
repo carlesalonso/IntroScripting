@@ -35,20 +35,6 @@ echo "El valor de variable1 és: $variable1"
 echo "La ruta actual és: $PWD"
 ```
 
-Es poden definir arrays:
-
-```bash
-array=(valor1 valor2 valor3)
-echo "El primer element de l'array és: ${array[0]}"
-```
-
-Si s'utilitza com índex `@`, s'accedeix a tots els elements de l'array:
-
-```bash
-colors=("vermell" "verd" "blau")
-echo "Colors disponibles: ${colors[@]}"
-```
-
 ## Escrivint a la consola
 
 Per escriure a la consola, utilitzem `echo` o `printf`. `echo` és més senzill i ja força el salt de línia, però `printf` ofereix més opcions de formatació.
@@ -69,6 +55,34 @@ En el cas d'echo, amb l'opció `-e` podem habilitar el processament d'escapament
 
 ```bash
 echo -e "Una cita amb cometes: \"Hola, món!\""
+```
+
+## Arrays i strings
+
+Els arrays són variables que poden contenir múltiples valors. Per definir un array, utilitzem parèntesis:
+
+```bash
+array=(valor1 valor2 valor3)
+# Per accedir a un element d'un array, utilitzem la sintaxi `${array[index]}`
+echo "El primer element de l'array és: ${array[0]}"
+```
+
+Si s'utilitza com índex `@`, s'accedeix a tots els elements de l'array:
+
+```bash
+colors=("vermell" "verd" "blau")
+echo "Colors disponibles: ${colors[@]}"
+```
+
+En el cas dels `strings`, podem fer servir cometes dobles o simples. Habitualmente, farem servir
+les cometes dobles permeten l'expansió de variables i l'escapament de caràcters:
+
+```bash
+string1="Hola, món!"
+string2='Hola, món!'
+echo "$string1" # Expansió de variables -> escriurà Hola, món!
+echo '$string1' # Sense expansió de variables -> escriurà $string1
+echo "El valor de variable1 és: \"$variable1 \"" # Expansió de variables ->Escriurà "Hola, món!"
 ```
 
 ## Passant dades a l'script
@@ -349,6 +363,8 @@ A la carpeta `exemples` trobaràs exemples d'scripts senzills que et poden ser �
 - [password.sh](exemples/password.sh) - Script per canviar la contrasenya a tots els usuari
 - [create_user.sh](exemples/create_user.sh) - Script per crear un usuari amb nom i password passats com arguments
 - [create_users.sh](exemples/create_users.sh) - Script per crear diversos usuaris amb un nom base i un número de seqüència
+- [regex.sh](exemples/regex.sh) - Script amb exemples de com fer servir expressions regulars en bash
+- [patternmatching.sh](exemples/patternmatching.sh) - Script amb exemples de com fer servir el `pattern matching` en bash
 
 ## Execució d'scripts
 

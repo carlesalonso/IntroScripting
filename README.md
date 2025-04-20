@@ -385,17 +385,17 @@ El script també es pot executar amb `bash nom_script.sh`en aquest cas, no cal d
 ## Bones pràctiques
 
 - Sempre comenta el codi
-- Utilitza noms descriptius per variables
-- Comprova errors després d'operacions importants
-- Fes servir `set -e` per aturar el script si hi ha errors
+- Utilitza noms descriptius per variables, en general, s'usa el format `snake_case` per a variables i per a funcions.
+- Comprova errors després d'operacions importants i gestiona'ls adequadament
 
 ## Recursos Addicionals
 
-- [Advanced Bash-Scripting Guide](https://tldp.org/LDP/abs/html/index.html) - Guia avançada de scripting en bash
-- [Bash Hackers Wiki](http://wiki.bash-hackers.org/start) - Wiki amb informació avançada sobre bash
-- [Introducción a Bash Univ. de Múrcia](https://www.um.es/innova/OCW/informatica-para-universitarios/ipu_docs/la_shell/bash.pdf ) - Guia d'introducció a bash en format PDF
-- [Shellcheck](https://www.shellcheck.net) eina online per validar scripts
+- [Advanced Bash-Scripting Guide](https://tldp.org/LDP/abs/html/index.html) - Guia avançada de scripting en bash.
+- [Bash Hackers Wiki](http://wiki.bash-hackers.org/start) - Wiki amb informació avançada sobre bash.
+- [Introducción a Bash Univ. de Múrcia](https://www.um.es/innova/OCW/informatica-para-universitarios/ipu_docs/la_shell/bash.pdf ) - Guia d'introducció a bash en format PDF.
+- [Shellcheck](https://www.shellcheck.net) eina online per validar scripts.
 - [Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html)
+- [Shell Style Guide](https://google.github.io/styleguide/shellguide.html) -Guia de bones pràctiques per a scripts en bash.
 
 ## Llicència d'ús
 

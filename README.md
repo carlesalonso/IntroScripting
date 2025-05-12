@@ -340,9 +340,9 @@ fi
 ### 2. Crear directoris amb comprovació
 
 ```bash
-DIRECTORI="/ruta/al/directori"
-if [[ ! -d "$DIRECTORI" ]]; then
-    mkdir -p "$DIRECTORI"
+directori="/ruta/al/directori"
+if [[ ! -d "$directori" ]]; then
+    mkdir -p "$directori"
     echo "Directori creat correctament"
 fi
 ```
